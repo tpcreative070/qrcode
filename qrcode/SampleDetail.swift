@@ -8,18 +8,34 @@
 import SwiftUI
 import SwiftData
 struct SampleDetail : View{
+   
     @EnvironmentObject var sample : SampleViewModel
-    @State private var name: String = "Tim"
+    @State var fName : String = ""
+    @State var lName : String = ""
+    @FocusState private var isFocused: Bool
 
-    var body : some View {
-        VStack(alignment: .center, spacing: 20) {
-            Text("Hello \(sample.name)")
+    
+    var body: some View{
+        
+        
+        VStack(spacing: 50) {
+            InfoField(title: "First Name", text: $fName).focused($isFocused)
+            InfoField(title: "Last Name", text: $lName).focused($isFocused)
             
-            TextField("Enter your name", text: $name).padding(.all,20 )
-                 Text("Hello, \(name)!")
-        }
+        }.padding(40)
+           
+           
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+              )
+    
     }
-
+      
+    
 }
 
 

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import IQKeyboardManagerSwift
 @main
 struct qrcodeApp: App {
     
@@ -14,5 +14,10 @@ struct qrcodeApp: App {
         WindowGroup {
             ContentView()
         }
+    }
+    
+    init() {
+        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.resignOnTouchOutside = true
     }
 }
