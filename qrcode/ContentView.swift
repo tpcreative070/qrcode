@@ -38,6 +38,14 @@ struct ContentView: View {
                 }label: {
                     Text("Navigation Link")
                 }
+                
+                Spacer()
+                
+                NavigationLink(){
+                    CameraDisplayView()
+                } label: {
+                    Text("Camera")
+                }
             }
         
                 .padding()
